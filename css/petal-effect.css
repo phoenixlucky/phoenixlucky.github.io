@@ -1,0 +1,38 @@
+.petal {
+  position: fixed;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 100;
+  pointer-events: none;
+  animation: falling cubic-bezier(0.37, 0, 0.63, 1) infinite;
+  will-change: transform, opacity;
+  transform-origin: center center;
+  backface-visibility: hidden;
+}
+
+@keyframes falling {
+  0% {
+    transform: translate3d(0, -10%, 0) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(var(--sway-x, 100px), 100vh, 0) rotate(var(--rotation, 360deg)) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* 关于页面背景样式 */
+.page-about {
+  position: relative;
+  background: url('/img/about-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
