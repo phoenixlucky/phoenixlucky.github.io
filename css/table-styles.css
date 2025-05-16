@@ -1,0 +1,110 @@
+/* 表格样式增强 */
+
+/* 基础表格样式 */
+.content table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(46, 52, 64, 0.08);
+}
+
+/* 表头样式 */
+.content table th {
+  background-color: #e5e9f0;
+  color: #2e3440;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid #d8dee9;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* 表格单元格样式 */
+.content table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #d8dee9;
+  white-space: normal;
+  word-break: break-word;
+  vertical-align: top;
+}
+
+/* 代码单元格样式 */
+.content table td code {
+  white-space: pre-wrap !important;
+  word-break: break-all !important;
+  display: block;
+  overflow-x: auto;
+  padding: 0.5rem;
+  background-color: #3b4252;
+  color: #d8dee9;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+}
+
+/* 华夫饼图表格特殊样式 */
+.waffle-table,
+table[class*="waffle"] {
+  table-layout: auto !important;
+  width: auto !important;
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  display: block !important;
+  margin: 1.5rem 0 !important;
+}
+
+.waffle-table td,
+table[class*="waffle"] td {
+  white-space: pre-wrap !important;
+  font-family: 'Fira Code', monospace !important;
+}
+
+/* 功能描述表格样式 */
+.function-table {
+  table-layout: fixed !important;
+}
+
+.function-table th:first-child {
+  width: 15%;
+}
+
+.function-table th:nth-child(2) {
+  width: 25%;
+}
+
+.function-table th:nth-child(3) {
+  width: 20%;
+}
+
+.function-table th:last-child {
+  width: 40%;
+}
+
+/* 代码示例高亮 */
+table td .language-python,
+table td .language-r,
+table td .language-javascript {
+  color: #d8dee9;
+  background-color: #3b4252;
+  padding: 0.5rem;
+  border-radius: 4px;
+  overflow-x: auto;
+  font-size: 0.9em;
+  font-family: 'Fira Code', monospace;
+}
+
+/* 响应式表格 */
+@media screen and (max-width: 768px) {
+  .content table {
+    display: block;
+    overflow-x: auto;
+  }
+  
+  .content table th,
+  .content table td {
+    white-space: normal;
+  }
+}
