@@ -19,6 +19,14 @@
   padding: 0.75rem 1rem;
   text-align: left;
   border-bottom: 2px solid #d8dee9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px; /* 设置最大宽度，超过此宽度的文本将显示省略号 */
+}
+
+/* 长文本表头样式 - 应用于包含长文本的表头 */
+.content table th.long-text {
   white-space: normal;
   word-break: break-word;
 }
@@ -27,12 +35,20 @@
 .content table td {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid #d8dee9;
-  white-space: normal;
-  word-break: break-word;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   vertical-align: top;
+  max-width: 150px; /* 设置最大宽度，超过此宽度的文本将显示省略号 */
 }
 
-/* 代码单元格样式 */
+/* 长文本单元格样式 - 应用于包含长文本的单元格 */
+.content table td.long-text {
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* 代码单元格样式 - 始终允许换行 */
 .content table td code {
   white-space: pre-wrap !important;
   word-break: break-all !important;
@@ -43,23 +59,6 @@
   color: #d8dee9;
   border-radius: 4px;
   font-family: 'Fira Code', monospace;
-}
-
-/* 华夫饼图表格特殊样式 */
-.waffle-table,
-table[class*="waffle"] {
-  table-layout: auto !important;
-  width: auto !important;
-  max-width: 100% !important;
-  overflow-x: auto !important;
-  display: block !important;
-  margin: 1.5rem 0 !important;
-}
-
-.waffle-table td,
-table[class*="waffle"] td {
-  white-space: pre-wrap !important;
-  font-family: 'Fira Code', monospace !important;
 }
 
 /* 功能描述表格样式 */
@@ -103,8 +102,11 @@ table td .language-javascript {
     overflow-x: auto;
   }
   
-  .content table th,
-  .content table td {
+  /* 在移动设备上强制所有长文本单元格换行 */
+  .content table th.long-text,
+  .content table td.long-text {
     white-space: normal;
+    word-break: break-word;
+    max-width: none;
   }
 }
