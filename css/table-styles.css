@@ -2,11 +2,14 @@
 
 /* 基础表格样式 */
 .content table {
-  table-layout: fixed;
   width: 100%;
   border-collapse: collapse;
   border-radius: 8px;
-  overflow: hidden;
+  display: block;
+  overflow-x: auto;
+  white-space: normal;
+  word-break: break-word;
+  word-wrap: break-word;
   margin: 1.5rem 0;
   box-shadow: 0 2px 4px rgba(46, 52, 64, 0.08);
 }
@@ -19,8 +22,11 @@
   padding: 0.75rem 1rem;
   text-align: left;
   border-bottom: 2px solid #d8dee9;
-  white-space: nowrap;
-  overflow: hidden;
+  display: block;
+  overflow-x: auto;
+  white-space: normal;
+  word-break: break-word;
+  word-wrap: break-word;
   text-overflow: ellipsis;
   max-width: 150px; /* 设置最大宽度，超过此宽度的文本将显示省略号 */
 }
@@ -35,10 +41,12 @@
 .content table td {
   padding: 0.75rem 1rem;
   border-bottom: 1px solid #d8dee9;
-  white-space: nowrap;
-  overflow: hidden;
+  display: block;
+  overflow-x: auto;
+  white-space: normal;
+  word-break: break-word;
+  word-wrap: break-word;
   text-overflow: ellipsis;
-  vertical-align: top;
   max-width: 150px; /* 设置最大宽度，超过此宽度的文本将显示省略号 */
 }
 
@@ -100,14 +108,18 @@ table td .language-javascript {
   .content table {
     display: block;
     overflow-x: auto;
-    white-space: nowrap;
+    white-space: normal;
+    word-break: break-word;
+    word-wrap: break-word;
   }
   
   /* 在移动设备上强制所有长文本单元格换行 */
   .content table th.long-text,
   .content table td.long-text {
+    display: block;
+    overflow-x: auto;
     white-space: normal;
     word-break: break-word;
-    max-width: none;
+    word-wrap: break-word;
   }
 }
